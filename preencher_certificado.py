@@ -98,7 +98,7 @@ def index():
         novo_nome_arquivo = f'certificado_{nome_aluno}.docx'
 
         # Caminho completo para o novo arquivo
-        output_dir = 'dist'
+        output_dir = 'Certificados_Gerados'
         if not os.path.exists(output_dir):
             os.makedirs(output_dir)
         output_path = os.path.join(output_dir, novo_nome_arquivo)
@@ -122,7 +122,7 @@ def success():
     filename = request.args.get('filename', '')
     return f'''
     <h1>Certificado gerado com sucesso!</h1>
-    <h4>Confira o diretorio dist onde fica o executavel do programa.</h4><br>
+    <h4>Confira o diretorio Certificados Gerados onde fica o executavel do programa.</h4><br>
     <h4>Para gerar um novo Certificado basta voltar a página anterior.</h4><br>
     '''
 
@@ -132,7 +132,7 @@ def download():
     filename = request.args.get('filename', '')
 
     # Caminho completo para o arquivo a ser baixado
-    file_path = os.path.join('dist', filename)
+    file_path = os.path.join('Certificados_Gerados', filename)
 
     # Verificar se o arquivo existe
     if not os.path.exists(file_path):

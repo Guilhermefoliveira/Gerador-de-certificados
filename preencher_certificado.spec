@@ -8,8 +8,7 @@ a = Analysis(
     pathex=[],
     binaries=[],
     datas=[
-        ('templates/index.html', 'templates'),
-        ('templates/mopp.docx', 'templates'),
+        ('templates/*', 'templates'),  # Adicionando todos os arquivos da pasta templates
         ('static/style.css', 'static')
     ],
     hiddenimports=[],
@@ -41,4 +40,3 @@ exe = EXE(
     codesign_identity=None,
     entitlements_file=None,
 )
-
